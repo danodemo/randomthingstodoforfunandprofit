@@ -42,7 +42,7 @@ public class TesterTest {
         boolean vacation = true;
         assertTrue(tester.sleepIn(weekday, vacation));
     }
-    
+
     @Test
     public void sleepInTestWeekendVacation() throws Exception {
         Tester tester = new Tester();

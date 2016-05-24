@@ -1,27 +1,36 @@
 package mondo.choco;
 
+import java.util.Scanner;
+
 /**
  * Created by danarchy on 5/24/16.
  */
 public class ChocoTester {
 
+    public static Scanner lineScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        makeChocolate(6, 3, 21);
+        System.out.println("Welcome to Choco-Boxer.");
+        userInput();
     }
 
+    public static void userInput(){
+        System.out.println("How many small bars (1-99)?");
+        int small = Integer.parseInt(lineScanner.next());
+        System.out.println("How many big bars (1-99)?");
+        int big = Integer.parseInt(lineScanner.next());
+        System.out.println("How many KG of choco in this box?");
+        int goal = Integer.parseInt(lineScanner.next());
+        int barsneeded = makeChocolate(small, big, goal);
+        if (barsneeded == -1){
+            System.out.println("Looks like there aren't enough bars in that box.  You're fired.");
+            userInput();
+        } else {
+            System.out.println("It will take " + barsneeded + " small bars to make this work.");
+            userInput();
+        }
+    }
 
-//    The goal divided by 5 without the remainder gives us the number of bigs we need
-//    That number is the number of bigs we use.
-//
-//    The goal minus the weight of the number of bigs we used is equal to how much weight
-//    can be filled with smalls
-//
-//    If the number of smalls needed is more than the number of smalls available, return -1.
-//
-//    If the number of smalls needed is less than or equal to the number of smalls,
-//    return the number of smalls needed
-//
-//    If the total weight of the smalls + bigs is less than the goal, return -1
     public static int makeChocolate(int small, int big, int goal) {
         int bigsNeeded = goal/5;
         if(bigsNeeded > big){

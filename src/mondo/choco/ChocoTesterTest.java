@@ -53,4 +53,28 @@ public class ChocoTesterTest {
         int goal = 20;
         assertEquals(10, tester.makeChocolate(small,big,goal));
     }
+
+    @Test
+    public void maskeChocolateTestSameValues() throws Exception{
+        int small = 5;
+        int big = 5;
+        int goal = 5;
+        assertEquals(0, tester.makeChocolate(small,big,goal));
+    }
+
+    @Test
+    public void makeChocolateTestMoreSmallsThanBigsFails() throws Exception {
+        int small = 38;
+        int big = 2;
+        int goal = 50;
+        assertEquals(-1, tester.makeChocolate(small,big,goal));
+    }
+
+    @Test
+    public void makeChocolateTestMoreBigsThanSmallsFails() throws Exception{
+        int small = 2;
+        int big = 10;
+        int goal = 500;
+        assertEquals(-1, tester.makeChocolate(small,big,goal));
+    }
 }
