@@ -77,4 +77,20 @@ public class ChocoTesterTest {
         int goal = 500;
         assertEquals(-1, tester.makeChocolate(small,big,goal));
     }
+
+    @Test
+    public void makeChocolateTestMoreProblemsDomLeaveMeAlone() throws Exception {
+        int small = 2;
+        int big = 9;
+        int goal = 8;
+        assertEquals(-1, tester.makeChocolate(small,big,goal));
+    }
+
+    @Test
+    public void makeChocolateTestInsaneNumbers() throws Exception {
+        int small = 497;
+        int big = 15;
+        int goal = 144;
+        assertEquals(69, tester.makeChocolate(small,big,goal));
+    }
 }
