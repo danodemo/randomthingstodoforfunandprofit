@@ -20,7 +20,7 @@ public class TesterTest {
     }
 
     @Test
-    public void sleepInTestPasses() throws Exception {
+    public void sleepInTestWorkDay() throws Exception {
         Tester tester = new Tester();
         boolean weekday = true;
         boolean vacation = false;
@@ -28,10 +28,26 @@ public class TesterTest {
     }
 
     @Test
-    public void sleepInTestFails() throws Exception {
+    public void sleepInTestWeekend() throws Exception {
         Tester tester = new Tester();
         boolean weekday = false;
         boolean vacation = false;
+        assertTrue(tester.sleepIn(weekday, vacation));
+    }
+
+    @Test
+    public void sleepInTestVacation() throws Exception {
+        Tester tester = new Tester();
+        boolean weekday = true;
+        boolean vacation = true;
+        assertTrue(tester.sleepIn(weekday, vacation));
+    }
+    
+    @Test
+    public void sleepInTestWeekendVacation() throws Exception {
+        Tester tester = new Tester();
+        boolean weekday = false;
+        boolean vacation = true;
         assertTrue(tester.sleepIn(weekday, vacation));
     }
 }
