@@ -38,4 +38,12 @@ public class EvenlySpacedTesterTest {
         int c = 33;
         assertFalse(tester.evenlySpaced(a,b,c));
     }
+
+    @Test
+    public void evenlySpacedReturnsTrueWith0() throws Exception {
+        int a = 2;
+        int b = 4;
+        int c = 0;
+        assertTrue(tester.evenlySpaced(a, b, c));
+    }
 }

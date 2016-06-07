@@ -93,4 +93,12 @@ public class ChocoTesterTest {
         int goal = 144;
         assertEquals(69, tester.makeChocolate(small,big,goal));
     }
+
+    @Test
+    public void makeChocolateTest6638() throws Exception {
+        int small = 6;
+        int big = 6;
+        int goal = 38;
+        assertEquals(-1, tester.makeChocolate(small,big,goal));
+    }
 }
