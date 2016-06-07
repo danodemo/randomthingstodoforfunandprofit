@@ -12,21 +12,24 @@ public class ThreadRacerMain {
 
     public static void main(String[] args){
         welcome();
-        race();
+        for(int count = racers; count > 0; count--){
+            ThreadRacerThread newRace = new ThreadRacerThread();
+            newRace.run();
+        }
         println("Race over!");
     }
 
-    private static void race() {
-        print("\r0");
-        for(int count = 20; count >= 0; count--) {
-            try {
-                sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            print("-");
-        }
-    }
+//    private static void race() {
+//        print("\r0");
+//        for(int count = 20; count >= 0; count--) {
+//            try {
+//                sleep(100);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            print("-");
+//        }
+//    }
 
     private static void welcome() {
         println("Welcome to Thread racer!");
